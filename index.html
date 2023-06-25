@@ -8,6 +8,73 @@
     <title>Library</title>
 </head>
 <body>
+    <div class="bookFormContainer">
+        <div id="formDiv" > 
+            <form action="" id="">
+                <fieldset>
+                    <legend>Add a book</legend>
+                    <div>
+                        <label for="titleForm">Title: </label>
+                        <br>
+                        <input type="text" id="titleForm" required>
+                    </div>
+                    <div>
+                        <label for="authorForm">Author: </label>
+                        <br>
+                        <input type="text" id="authorForm" required>
+                    </div>
+                    <div>
+                        <label for="pagesForm">Pages: </label>
+                        <br>
+                        <input type="number" id="pagesForm" required>
+                    </div>
+                    <div>
+                        <label for="readForm">Read: </label>
+                        <br>
+                        <button type="button" value="Not Yet Read" id="readForm">Not Yet Read</button>
+                    </div>
+
+
+                    <div>
+                        <label for="submitForm">Status: </label>
+                        <br>
+                        <button type="submit" id="submitForm">Add this book</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- test -->
+    </div>
+
+    
+
+    <div class="main-container">
+        <div class="header">
+            <h1>Library</h1>
+        </div>
+        
+        <div class="library">
+            <!-- <div class="book">
+                <div class="title">Test</div>
+                <div class="author">Test</div>
+                <div class="pages">Test</div>
+
+                 <div class="button-space"> 
+                    <div class="read-status"> 
+                        <button class="read-button">Read</button> 
+                    </div>
+                    <div class="deleteBtnDiv">
+                        <button class="deleteBtn" data-dom-btn="0">Delete</button>
+                    </div>
+                </div>
+                
+            </div> -->
+        </div>
+        <div class="addBook">
+            <button type="button" id="addBookBtn" class="addBookButton">+</button>
+        </div>
+        
+    </div>
     
 </body>
 </html>
