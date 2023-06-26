@@ -13,32 +13,30 @@
             <form action="" id="">
                 <fieldset>
                     <legend>Add a book</legend>
-                    <div>
-                        <label for="titleForm">Title: </label>
-                        <br>
-                        <input type="text" id="titleForm" required>
-                    </div>
-                    <div>
-                        <label for="authorForm">Author: </label>
-                        <br>
-                        <input type="text" id="authorForm" required>
-                    </div>
-                    <div>
-                        <label for="pagesForm">Pages: </label>
-                        <br>
-                        <input type="number" id="pagesForm" required>
-                    </div>
-                    <div>
-                        <label for="readForm">Read: </label>
-                        <br>
-                        <button type="button" value="Not Yet Read" id="readForm">Not Yet Read</button>
-                    </div>
 
-
-                    <div>
-                        <label for="submitForm">Status: </label>
-                        <br>
-                        <button type="submit" id="submitForm">Add this book</button>
+                    <div class="form-container">
+                        <div class="input-containers">
+                            <label for="titleForm">Title: </label>
+                            <input type="text" id="titleForm" required>
+                        </div>
+                        <div class="input-containers">
+                            <label for="authorForm">Author: </label>
+                            <input type="text" id="authorForm" required>
+                        </div>
+                        <div class="input-containers">
+                            <label for="pagesForm">Pages: </label>
+                            <input type="number" id="pagesForm" required>
+                        </div>
+                        <div class="input-containers">
+                            <label for="readForm">Click to switch </label>
+                            <!-- <br> -->
+                            <button type="button" value="Not Yet Read" class="readForm">Not Yet Read</button>
+                        </div>
+                        <div class="input-containers">
+                            <!-- <label for="submitForm">Status: </label> -->
+                            <!-- <br> -->
+                            <button type="submit" id="submitForm">Add this book</button>
+                        </div>
                     </div>
                 </fieldset>
             </form>
@@ -73,8 +71,15 @@
         <div class="addBook">
             <button type="button" id="addBookBtn" class="addBookButton">+</button>
         </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <a href="https://github.com/Risshiganesh/library">Made by Risshiganesh Villalan</a>
+            </div>
+        </div>
         
     </div>
+    
     
 </body>
 </html>

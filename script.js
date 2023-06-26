@@ -12,7 +12,7 @@ const harryPotter = new Book("Sorceror's stone","J.K Rowling","223","Read");
 
 const lotr = new Book("Fellowship of the Ring","J.R.R Tolkien","500","Not Yet Read");
 
-let myLibrary = [harryPotter,lotr];
+let myLibrary = [harryPotter,lotr,lotr,lotr,lotr,lotr];
 
 
 
@@ -29,7 +29,7 @@ function addBookToLibrary(){
     
     const inputPages = document.querySelector('#pagesForm');
     
-    const inputRead = document.querySelector('#readForm');
+    const inputRead = document.querySelector('.readForm');
     
 
     const bookTitle = inputTitle.value;
@@ -89,6 +89,10 @@ function displayLibrary (library){
         const readButton = document.createElement('button');
         readButton.classList.add('read-button');
         readButton.textContent = book.read;
+
+        if (readButton.textContent === 'Not Yet Read'){
+            readButton.classList.add('not-yet-read');
+        }
 
 
 
@@ -316,6 +320,7 @@ function readToggle () {
 
                 myLibrary[nodeIndex].read = 'Not Yet Read';
                 button.textContent = 'Not Yet Read';
+                button.classList.add('not-yet-read');
                 return;
 
             }
@@ -324,6 +329,7 @@ function readToggle () {
 
                 myLibrary[nodeIndex].read = 'Read';
                 button.textContent = 'Read';
+                button.classList.remove('not-yet-read');
                 return;
             }
         });
@@ -337,7 +343,7 @@ function readToggle () {
 
 function formReadButton () {
 
-    const readBtnForm = document.querySelector('#readForm');
+    const readBtnForm = document.querySelector('.readForm');
 
     let readData = readBtnForm.value;
 
@@ -345,10 +351,13 @@ function formReadButton () {
         if (readBtnForm.value === 'Read'){
 
             readData = 'Not Yet Read';
+            readBtnForm.classList.remove('read-btn-color');
   
         } else if (readBtnForm.value === 'Not Yet Read') {
 
-            readData = 'Read';          
+            readData = 'Read';
+            readBtnForm.classList.add('read-btn-color');
+
 
         }
 

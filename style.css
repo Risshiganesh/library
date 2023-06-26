@@ -1,3 +1,16 @@
+@font-face {
+    font-family: Spectral;
+    src: url(assets/fonts/SpectralSC-Regular.otf);
+}
+
+@font-face {
+    font-family: Ovo;
+    src: url(assets/fonts/Ovo-Regular.otf);
+}
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -9,25 +22,55 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    background: linear-gradient(217deg, rgba(255, 0, 115, 0.666), rgba(255,0,0,0) 70.71%),            linear-gradient(127deg, rgba(255, 251, 0, 0.674), rgba(0,255,0,0) 70.71%),            linear-gradient(336deg, rgb(255, 140, 0), rgba(0,0,255,0) 70.71%);
+    background: url(assets/background1.jpg);
+    /* background: linear-gradient(217deg, rgba(255, 0, 115, 0.666), rgba(255,0,0,0) 70.71%),            linear-gradient(127deg, rgba(255, 251, 0, 0.674), rgba(0,255,0,0) 70.71%),            linear-gradient(336deg, rgb(255, 140, 0), rgba(0,0,255,0) 70.71%); */
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     
 }
 
-.header {
-    grid-area: header;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+button {
+    font-family: Ovo, Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
+.header {
+
+
+    grid-area: header;
+    text-align: center;
+    font-family: Spectral, Arial, Helvetica, sans-serif;
+    color: white;
+    width: 190px;
+    height: 60px;
+
+    font-size: 16px;
+
+    border-radius: 0px 0px 15px 15px;
+
+    padding: 5px 5px 15px 5px;
+    
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    align-self: start;
+    border-top: none;
+
+}
+
+
+
 .main-container {
+    position: relative;
     height: 100%;
     width: 100%;
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 90px 1fr;
 
     grid-template-areas: 
     "header"
@@ -35,7 +78,7 @@ body {
 
     justify-items: center;
     align-items: center;
-    padding: 30px;
+    padding: 0px 30px 0px 30px;
 }
 
 .library {
@@ -58,7 +101,7 @@ body {
 
 .book {
 
-    background: rgba( 255, 255, 255, 0.25 );
+    background: rgba(0, 0, 0, 0.25);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border-radius: 10px;
@@ -70,20 +113,22 @@ body {
     display: grid;
     padding: 20px;
 
+    color: white;
+
 
 
 }
 
 
 .title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
 }
 
 .author,
 .pages{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
 }
@@ -94,6 +139,61 @@ body {
     grid-template-columns: repeat(2,1fr);
 }
 
+.read-status {
+    display: grid;
+
+}
+
+.read-button {
+
+    width: 120px;
+    height: 35px;
+
+    background: rgba(106, 255, 0, 0.57);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    justify-self: start;
+    align-self: end;
+
+}
+
+
+.not-yet-read {
+    background: rgba(255, 221, 0, 0.58);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+
+
+
+.deleteBtnDiv {
+    display: grid;
+
+}
+
+.deleteBtn {
+
+    width: 120px;
+    height: 35px;
+
+    background: rgba(255, 47, 47, 0.431);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    justify-self: end;
+    align-self: end;
+
+}
 
 
 /* Form */
@@ -117,35 +217,131 @@ body {
 
 #formDiv {
     width: 300px;
-    height: 300px;
-    background: rgba( 255, 255, 255, 0.25 );
+    height: 450px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.25);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+fieldset {
+    border: none;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+legend {
+    font-family: Ovo, Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
 }
 
 label {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: white;
+    justify-self: start;
+    align-self: end;
+}
+
+
+#form-container {
+    margin-bottom: 100px;
+    display: grid;
+}
+
+
+.input-containers {
+    display: grid;
+    /* grid-template-rows: 30px,1fr; */
+    row-gap: 5px;
+}
+
+.input-containers:nth-child(4) > label{
+    justify-self: center;
+
+    
+}
+
+
+input {
+    appearance: none;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+}
+
+.readForm {
+    width: 100%;
+    height: 30px;
+    /* margin-top: 13px; */
+    margin-bottom: 15px;
+    border-radius: 5px;
+
+
+    background: rgba(255, 221, 0, 0.58);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.read-btn-color {
+    background: rgba(106, 255, 0, 0.57);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+#submitForm {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+
+    background: rgba(255, 255, 255, 0.784);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 
 .addBook {
     position: fixed;
-    bottom: 30px;
+    bottom: 40px;
     right: 30px;
+
+
+    z-index: 1;
 }
 
 .addBookButton {
+    
+    
+
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    font-size: 50px;
-    color: purple;
+    font-size: 55px;
+    color: white;
+    font-weight: 100;
 
-    background: rgba( 255, 255, 255, 0.25 );
+    background: rgba(99, 99, 99, 0.25);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -153,4 +349,53 @@ label {
 
 .hideAddButton {
     display: none;
+}
+
+
+
+/* footer */
+
+.footer {
+    display: grid;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 15px 15px 0px 0px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-bottom: none;
+
+    z-index: 0;
+
+    
+
+}
+
+.footer-content {
+    color: white;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+    position: relative;
+    z-index: 0;
+
+    align-self: center;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    
+    color: white;
+
 }
