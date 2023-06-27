@@ -1,16 +1,17 @@
 
 
-function Book(title,author,pages,read ) {
+function Book(title,author,pages,read,link ) {
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.read = read;
+    this.link = link;
 }
 
 
-const harryPotter = new Book("Sorceror's stone","J.K Rowling","223","Read");
+const harryPotter = new Book("Sorceror's stone","J.K Rowling","223","Read","https:upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg");
 
-const lotr = new Book("Fellowship of the Ring","J.R.R Tolkien","500","Not Yet Read");
+const lotr = new Book("Fellowship of the Ring","J.R.R Tolkien","500","Not Yet Read","https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif");
 
 let myLibrary = [harryPotter,lotr,lotr,lotr,lotr,lotr];
 
@@ -20,9 +21,6 @@ let myLibrary = [harryPotter,lotr,lotr,lotr,lotr,lotr];
 
 function addBookToLibrary(){
 
-    console.log('why?')
-
-   
     const inputTitle = document.querySelector('#titleForm');
 
     const inputAuthor = document.querySelector('#authorForm');
@@ -31,11 +29,15 @@ function addBookToLibrary(){
     
     const inputRead = document.querySelector('.readForm');
     
+    const inputLink = document.querySelector('#imageLink');
 
     const bookTitle = inputTitle.value;
     const bookAuthor = inputAuthor.value;
     const bookPages = inputPages.value;
     const bookStatus = inputRead.value;
+
+    // Uncomment these in the new version and remember to add it to the .push method
+    // const bookImage = inputLink.value;
 
     myLibrary.push(new Book(bookTitle,bookAuthor,bookPages,bookStatus));
 
@@ -58,6 +60,11 @@ function displayLibrary (library){
         const bookDiv = document.createElement('div');
         bookDiv.classList.add('book');
 
+
+
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text-info');
+
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('title');
         titleDiv.textContent = book.title;
@@ -70,10 +77,19 @@ function displayLibrary (library){
         pagesDiv.classList.add('pages');
         pagesDiv.textContent = "Pages: " +book.pages;
 
-        // const readDiv = document.createElement('div');
-        // readDiv.classList.add('read');
-        // readDiv.textContent = "Read: " +book.read;
 
+
+        const imageDiv = document.createElement('div');
+        imageDiv.classList.add('image-info');
+    
+        const bookImage = document.createElement('img');
+
+        // Seems to cause an error if book.link is empty
+
+        if (book.link) {
+            bookImage.setAttribute('src', book.link);
+        }
+        
 
 
 
@@ -109,10 +125,22 @@ function displayLibrary (library){
         libraryDiv.appendChild(bookDiv);
         // add each book to main-container
         // book.
-        bookDiv.appendChild(titleDiv);
-        bookDiv.appendChild(authorDiv);
-        bookDiv.appendChild(pagesDiv);
-        // bookDiv.appendChild(readDiv);
+        bookDiv.appendChild(textDiv)
+
+        textDiv.appendChild(titleDiv);
+        textDiv.appendChild(authorDiv);
+        textDiv.appendChild(pagesDiv);
+
+        // Append image to book div
+        bookDiv.appendChild(imageDiv);        
+
+
+        if (book.link){
+            
+            
+            imageDiv.appendChild(bookImage);
+        }
+
         bookDiv.appendChild(buttonSpace);
 
         buttonSpace.appendChild(readStatus);
@@ -120,6 +148,9 @@ function displayLibrary (library){
 
         readStatus.appendChild(readButton);
         deleteBtnDiv.appendChild(deleteBtn);
+
+
+        
 
         // update append values
 
@@ -166,8 +197,6 @@ function showForm (){
 
     formReadButton();
 
-    // console.log(test);
-
     formSubmit();
 
 
@@ -177,7 +206,7 @@ function showForm (){
 function hideButton(){
 
     const bookFormContainer = document.querySelector('.bookFormContainer');
-    const formButton = document.querySelector('#addBookBtn');
+    const formButton = document.querySelector('.addBook');
 
     bookFormContainer.classList.add('showForm');
     formButton.classList.add('hideAddButton');
@@ -188,7 +217,7 @@ function hideButton(){
 function showButton(){
 
     const bookFormContainer = document.querySelector('.bookFormContainer');
-    const formButton = document.querySelector('#addBookBtn');
+    const formButton = document.querySelector('.addBook');
 
     bookFormContainer.classList.remove('showForm');
     formButton.classList.remove('hideAddButton');
@@ -212,27 +241,16 @@ function formSubmit() {
         const inputAuthor = document.querySelector('#authorForm');
         
         const inputPages = document.querySelector('#pagesForm');
-        
-        
-    
+
         const bookTitle = inputTitle.value;
         const bookAuthor = inputAuthor.value;
         const bookPages = inputPages.value;
-
-
-
 
         if(!bookTitle||!bookAuthor||!bookPages) {
             return;
         }
 
-
-
-        console.log(e);
-
         e.preventDefault();
-
-        console.log("Form submit button fn runs");
 
         // Add new books to library
         addBookToLibrary();
@@ -363,9 +381,7 @@ function formReadButton () {
 
         readBtnForm.textContent = readData;
         readBtnForm.value = readData;
-        console.log(readData);
         
-
         
     });
 
