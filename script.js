@@ -9,11 +9,19 @@ function Book(title,author,pages,read,link ) {
 }
 
 
-const harryPotter = new Book("Sorceror's stone","J.K Rowling","223","Read","https:upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg");
+const meditations = new Book("Meditations","Marcus Aurelius","410","Not Yet Read","assets/book-images/meditations.jpg");
 
-const lotr = new Book("Fellowship of the Ring","J.R.R Tolkien","500","Not Yet Read","https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif");
+const msfm = new Book("Man's Search for Meaning","Viktor E. Frankl","200","Not Yet Read","assets/book-images/msfm.jpg");
 
-let myLibrary = [harryPotter,lotr,lotr,lotr,lotr,lotr];
+const siddhartha = new Book("Siddhartha","Hermann Hesse","152","Not Yet Read","assets/book-images/siddhartha.jpeg");
+
+const atlasShrugged = new Book("Atlas Shrugged","Ayn Rand","1,168","Not Yet Read","assets/book-images/atlas-shrugged.jpg");
+
+const littlePrince = new Book("Little Prince","Antoine de Saint-Exupéry","68","Not Yet Read","assets/book-images/littleprince.jpeg");
+
+const infiniteJest = new Book("Infinite Jest","David Foster Wallace","1,079","Not Yet Read","assets/book-images/infinite-jest.jpg");
+
+let myLibrary = [meditations,msfm,siddhartha,atlasShrugged,littlePrince,infiniteJest];
 
 
 

@@ -24,6 +24,7 @@ body {
     position: relative;
     background-color: black;
     background: url(assets/background1.jpg);
+
     /* background: linear-gradient(217deg, rgba(255, 0, 115, 0.666), rgba(255,0,0,0) 70.71%),            linear-gradient(127deg, rgba(255, 251, 0, 0.674), rgba(0,255,0,0) 70.71%),            linear-gradient(336deg, rgb(255, 140, 0), rgba(0,0,255,0) 70.71%); */
     background-size: cover;
     background-repeat: no-repeat;
@@ -112,9 +113,9 @@ button:active {
     width: 100%;
     /* border: 2px solid red; */
 
-    gap: 10px;
+    gap: 15px;
 
-    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
     grid-template-rows: repeat(auto-fit,210px);
 
 
@@ -346,7 +347,7 @@ label {
     row-gap: 5px;
 }
 
-.input-containers:nth-child(5) > label{
+.input-containers:nth-child(4) > label{
     justify-self: center;
 
     
@@ -359,6 +360,13 @@ input {
     border-radius: 5px;
     margin-bottom: 10px;
     border: 1px solid grey;
+    padding: 0px 10px 0px 10px;
+    font-family: Ovo, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.303);
+    color: white;
+    
 }
 
 .readForm {
@@ -392,9 +400,9 @@ input {
     margin-top: 20px;
     font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
 
-    background: rgba(255, 255, 255, 0.784);
+    background: rgba(51, 0, 255, 0.379);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
