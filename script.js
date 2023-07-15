@@ -1,11 +1,22 @@
 
+// constructor
+// function Book(title,author,pages,read,link) {
+//     this.title = title,
+//     this.author = author,
+//     this.pages = pages,
+//     this.read = read;
+//     this.link = link;
+// }
 
-function Book(title,author,pages,read,link ) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read;
-    this.link = link;
+// class
+class Book {
+    constructor(title,author,pages,read,link){
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read;
+        this.link = link;
+    }
 }
 
 
@@ -242,8 +253,6 @@ function formSubmit() {
 
     submitButton.addEventListener('click',function(e){
 
-
-
         const inputTitle = document.querySelector('#titleForm');
 
         const inputAuthor = document.querySelector('#authorForm');
@@ -340,6 +349,8 @@ function readToggle () {
     readButtons.forEach(button => {
         
         const nodeIndex = button.dataset.readBtn;
+
+        // console.log(nodeIndex);
 
         button.addEventListener('click', function(){
             if (button.textContent === 'Read'){
